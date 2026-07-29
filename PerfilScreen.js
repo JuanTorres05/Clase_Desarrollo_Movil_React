@@ -4,6 +4,8 @@ import {
   View,
   Text,
   Image,
+  TouchableOpacity,
+  Alert,
   StyleSheet,
   StatusBar,
 } from 'react-native';
@@ -43,6 +45,15 @@ export default function PerfilScreen() {
             <Text style={styles.labelCorreo}>Correo electrónico:</Text>
             <Text style={styles.valorCorreo}>juan.torres@soy.sena.edu.co</Text>
           </View>
+
+          {/* Botón Editar Perfil */}
+          <TouchableOpacity
+            style={styles.botonEditar}
+            activeOpacity={0.8}
+            onPress={() => Alert.alert('Editar Perfil', 'Función de edición activada.')}
+          >
+            <Text style={styles.textoBotonEditar}>✏️ Editar Perfil</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -118,5 +129,23 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     color: '#0F172A',
+  },
+  botonEditar: {
+    backgroundColor: '#2563EB',
+    marginTop: 16,
+    width: '100%',
+    paddingVertical: 14,
+    borderRadius: 14,
+    alignItems: 'center',
+    shadowColor: '#2563EB',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  textoBotonEditar: {
+    color: '#FFFFFF',
+    fontSize: 15,
+    fontWeight: '700',
   },
 });
